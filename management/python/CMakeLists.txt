@@ -17,7 +17,7 @@
 # under the License.
 #
 
-find_package(PythonInterp REQUIRED)
+find_package(PythonInterp 2.7 REQUIRED)
 
 add_custom_target(management_python_build ALL
                   COMMAND

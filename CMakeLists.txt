@@ -68,15 +68,6 @@ enable_testing()
 include (CTest)
 configure_file(${CMAKE_SOURCE_DIR}/CTestCustom.cmake ${CMAKE_BINARY_DIR}/CTestCustom.cmake)
 
-if (MSVC)
-  # Chaxnge warning C4996 from level 1 to level 4. These are real and shouldn't
-  # be completely ignored, but they're pretty well checked out and will throw
-  # a run-time error if violated.
-  # "warning C4996: 'std::equal': Function call with parameters that may
-  # be unsafe..."
-  add_definitions(/w44996)
-endif (MSVC)
-
 # Overall packaging/install options.
 # This section also has all the setup for various packaging-specific options.
 set (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")

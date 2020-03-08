@@ -23,6 +23,7 @@
  */
 #include "qpid/CommonImportExport.h"
 #include "qpid/sys/OutputControl.h"
+#include <string>
 #include <boost/shared_ptr.hpp>
 
 namespace qpid {

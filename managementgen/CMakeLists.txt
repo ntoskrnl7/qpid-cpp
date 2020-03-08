@@ -22,7 +22,7 @@ if (INSTALL_QMFGEN)
     project(qpidc-qmfgen)
     cmake_minimum_required(VERSION 2.8.7 FATAL_ERROR)
 
-    find_package(PythonInterp REQUIRED)
+    find_package(PythonInterp 2.7 REQUIRED)
 
     execute_process(COMMAND ${PYTHON_EXECUTABLE}
                     -c "from distutils.sysconfig import get_python_lib; print get_python_lib(False, prefix='${CMAKE_INSTALL_PREFIX}').replace('\\\\', '/')"

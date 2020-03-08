@@ -17,3 +17,15 @@
 # under the License.
 #
 /build/
+/lib/
+/.vscode/
+/examples/.vs/
+/examples/.vscode/
+/examples/build/
+/examples/messaging/Debug/
+/examples/messaging/Release/
+/examples/messaging/x64/
+/examples/messaging/*.vcx*
+/examples/messaging/*.pdb
+/examples/Backup/
+examples/UpgradeLog.htm

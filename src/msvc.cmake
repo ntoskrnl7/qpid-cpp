@@ -87,6 +87,18 @@ MACRO (add_msvc_version_full verProject verProjectType verProjectFileExt verFN1 
 
         configure_file(${CMAKE_CURRENT_SOURCE_DIR}/windows/resources/template-resource.rc
                        ${CMAKE_CURRENT_BINARY_DIR}/windows/resources/${verProject}-resource.rc)
+
+        # Chaxnge warning C4996 from level 1 to level 4. These are real and shouldn't
+        # be completely ignored, but they're pretty well checked out and will throw
+        # a run-time error if violated.
+        # "warning C4996: 'std::equal': Function call with parameters that may
+        # be unsafe...
+        #
+        # (I excluded the rc file because an error occurred.)
+        foreach(src ${${verProject}_SOURCES})
+            set_source_files_properties(${src} PROPERTIES COMPILE_OPTIONS /w44996)
+        endforeach()
+
         set (${verProject}_SOURCES
             ${${verProject}_SOURCES}
             ${CMAKE_CURRENT_BINARY_DIR}/windows/resources/${verProject}-resource.rc
